@@ -4,7 +4,7 @@
 #
 Name     : perl-LWP-Protocol-https
 Version  : 6.06
-Release  : 14
+Release  : 15
 URL      : http://www.cpan.org/CPAN/authors/id/M/MS/MSCHILLI/LWP-Protocol-https-6.06.tar.gz
 Source0  : http://www.cpan.org/CPAN/authors/id/M/MS/MSCHILLI/LWP-Protocol-https-6.06.tar.gz
 Summary  : Provide https support for LWP::UserAgent
@@ -39,6 +39,10 @@ doc components for the perl-LWP-Protocol-https package.
 %setup -q -n LWP-Protocol-https-6.06
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
+export LANG=C
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make V=1  %{?_smp_mflags}
@@ -48,9 +52,10 @@ else
 fi
 
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test
 
 %install
@@ -67,7 +72,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.24.0/LWP/Protocol/https.pm
+/usr/lib/perl5/site_perl/5.26.0/LWP/Protocol/https.pm
 
 %files doc
 %defattr(-,root,root,-)
