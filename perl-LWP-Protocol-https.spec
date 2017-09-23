@@ -4,7 +4,7 @@
 #
 Name     : perl-LWP-Protocol-https
 Version  : 6.06
-Release  : 15
+Release  : 16
 URL      : http://www.cpan.org/CPAN/authors/id/M/MS/MSCHILLI/LWP-Protocol-https-6.06.tar.gz
 Source0  : http://www.cpan.org/CPAN/authors/id/M/MS/MSCHILLI/LWP-Protocol-https-6.06.tar.gz
 Summary  : Provide https support for LWP::UserAgent
@@ -72,7 +72,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.0/LWP/Protocol/https.pm
+/usr/lib/perl5/site_perl/5.26.1/LWP/Protocol/https.pm
 
 %files doc
 %defattr(-,root,root,-)
