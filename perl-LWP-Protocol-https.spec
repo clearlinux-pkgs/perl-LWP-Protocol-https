@@ -4,7 +4,7 @@
 #
 Name     : perl-LWP-Protocol-https
 Version  : 6.07
-Release  : 20
+Release  : 21
 URL      : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.07.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.07.tar.gz
 Summary  : 'Provide https support for LWP::UserAgent'
