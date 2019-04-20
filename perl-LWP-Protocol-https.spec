@@ -4,10 +4,10 @@
 #
 Name     : perl-LWP-Protocol-https
 Version  : 6.07
-Release  : 27
+Release  : 28
 URL      : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.07.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.07.tar.gz
-Summary  : 'Provide https support for LWP::UserAgent'
+Summary  : Provide https support for LWP::UserAgent
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 BuildRequires : buildreq-cpan
@@ -34,6 +34,7 @@ LWP::Protocol::https 6.06
 Summary: dev components for the perl-LWP-Protocol-https package.
 Group: Development
 Provides: perl-LWP-Protocol-https-devel = %{version}-%{release}
+Requires: perl-LWP-Protocol-https = %{version}-%{release}
 
 %description dev
 dev components for the perl-LWP-Protocol-https package.
