@@ -4,12 +4,13 @@
 #
 Name     : perl-LWP-Protocol-https
 Version  : 6.07
-Release  : 28
+Release  : 29
 URL      : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.07.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.07.tar.gz
-Summary  : Provide https support for LWP::UserAgent
+Summary  : 'Provide https support for LWP::UserAgent'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-LWP-Protocol-https-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Encode::Locale)
 BuildRequires : perl(HTML::HeadParser)
@@ -40,14 +41,24 @@ Requires: perl-LWP-Protocol-https = %{version}-%{release}
 dev components for the perl-LWP-Protocol-https package.
 
 
+%package perl
+Summary: perl components for the perl-LWP-Protocol-https package.
+Group: Default
+Requires: perl-LWP-Protocol-https = %{version}-%{release}
+
+%description perl
+perl components for the perl-LWP-Protocol-https package.
+
+
 %prep
 %setup -q -n LWP-Protocol-https-6.07
+cd %{_builddir}/LWP-Protocol-https-6.07
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -57,7 +68,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -77,8 +88,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/LWP/Protocol/https.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/LWP::Protocol::https.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/LWP/Protocol/https.pm
