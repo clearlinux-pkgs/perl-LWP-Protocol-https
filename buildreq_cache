@@ -1,14 +1,11 @@
-6.07
+6.09
 perl(Encode::Locale)
-perl(HTML::HeadParser)
-perl(HTTP::Date)
-perl(HTTP::Request)
 perl(IO::Socket::SSL)
+perl(IO::Socket::SSL::Utils)
+perl(LWP::Protocol::http)
 perl(LWP::UserAgent)
 perl(Mozilla::CA)
 perl(Net::HTTPS)
 perl(Net::SSL)
 perl(Net::SSLeay)
 perl(Test::RequiresInternet)
-perl(Try::Tiny)
-perl(URI)
