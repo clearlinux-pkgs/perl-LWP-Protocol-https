@@ -1,11 +1,9 @@
-6.10
+6.11
 perl(Encode::Locale)
 perl(IO::Socket::SSL)
 perl(IO::Socket::SSL::Utils)
 perl(LWP::Protocol::http)
 perl(LWP::UserAgent)
-perl(Mozilla::CA)
 perl(Net::HTTPS)
-perl(Net::SSL)
-perl(Net::SSLeay)
+perl(Test::Needs)
 perl(Test::RequiresInternet)
